@@ -2,15 +2,49 @@
 import './App.css';
 import { EnterQuestion } from './EnterQuestion';
 import { useState } from "react";
+import { SearchTag } from './SearchTag';
+import { Companieslist } from './Companieslist';
+import AppBar from '@mui/material/AppBar';
+import {Route,Switch,Link} from 'react-router-dom';
+
 
 
 function App() {
+  const styles={color:"white"}
+  
   return (
     <div className="App">
-      <EnterQuestion/>
-      <UserProfile/>
+      <AppBar position="static">
+        
+        <div className="navbar">
+        
+        <Link to="/UserProfile" style={styles}>UseProfile</Link>
+        <Link to="/EnterQuestion" style={styles}>EnterQuestion</Link>
+        <Link to="/SearchTag" style={styles}>SearchTag</Link>
+        <Link to="/CompaniesList" style={styles}>CompaneisList</Link>
+        </div>
 
-  
+      </AppBar>
+
+     <Switch>
+       <Route path="/UserProfile">
+         <UserProfile/>
+
+       </Route>
+       <Route path="/EnterQuestion">
+         <EnterQuestion/>
+
+       </Route>
+       <Route path="/SearchTag">
+         <SearchTag/>
+
+       </Route>
+       <Route path="/Companieslist">
+         <Companieslist/>
+
+       </Route>
+     </Switch>
+      
     </div>
   );
 }
@@ -46,5 +80,4 @@ function UserProfile(){
    
   )
 }
-
 export default App;
