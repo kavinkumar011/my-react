@@ -7,7 +7,7 @@ export function Companieslist() {
     <div className="companieslist">
       <h2>Companies and vaccanies</h2>
 
-      <button onClick={()=>{setshow(!show)}}> Showcompanies</button>
+      <button onClick={()=>{setshow(!show)}}> {show ? "Hide" :"Show"}companies</button>
       
       {show ? <div>
       <p>new
